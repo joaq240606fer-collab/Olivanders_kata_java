@@ -1,7 +1,9 @@
-package edu.teamrocket.ollivanders;
+package edu.teamrocket.ollivanders.Domain;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import edu.teamrocket.ollivanders.Item;
 
 public class ItemTest {
 
