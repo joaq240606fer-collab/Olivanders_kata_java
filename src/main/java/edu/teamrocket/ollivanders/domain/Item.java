@@ -1,36 +1,45 @@
 package edu.teamrocket.ollivanders.domain;
 
-public class Item {
+final class Item {
 
-    private String name;
-    private int sell_in;
-    private int quality;
+    private final String name;
+    private int sell_in = 0;
+    private int quality = 0;
 
-    public Item(String name, int sell_in, int quality) {
+    Item(String name, int sell_in, int quality) {
         this.name = name;
         this.sell_in = sell_in;
         this.quality = quality;
     }
 
-    public String getName() {
+    @Override
+     public String toString() {
+        StringBuilder itemDescription = new StringBuilder();
+        itemDescription.append("name=" + getName());
+        itemDescription.append(", sell_in=" + getSell_in());
+        itemDescription.append(", quality=" + getQuality());
+        return itemDescription.toString();
+    }
+    
+
+    String getName() {
         return this.name;
     }
 
-    public int getQuality() {
-        return quality;
+    int getSell_in() {
+        return this.sell_in;
     }
 
-    void setQuality(int quality) {
-        this.quality = quality;
+    void setSell_in() {
+        this.sell_in = this.getSell_in() - 1;
     }
 
-
-    public int getSell_in() {
-        return sell_in;
+    int getQuality() {
+        return this.quality;
     }
 
-    @Override
-    public String toString() {
-        return name + ", " + sell_in + ", " + quality;
+    void setQuality(int value) {
+        this.quality = value;
     }
+
 }

@@ -1,10 +1,6 @@
 package edu.teamrocket.ollivanders.domain;
 
-class NormalItem {
-
-    private String name;
-    private int sell_in;
-    private int quality;
+public class NormalItem implements Updateable{
 
     private final Item item;
 
@@ -13,43 +9,51 @@ class NormalItem {
         
     }
 
+    @Override 
+    public String toString(){
+        return item.toString();
+    }
+
     Item getItem(){
         return this.item;
     }
 
     public String getName() {
-        return this.name;
+        return this.item.getName();
     }
 
     public int getSell_in() {
-        return this.sell_in;
+        return this.item.getSell_in();
     }
 
-    void setSell_in(int sell_in) {
-        this.sell_in = sell_in;
+    void setSell_in() {
+        this.item.setSell_in();
     }
 
-    public int getQuality() {
-        return this.quality;
+    public int getQuality(){
+        return this.item.getQuality();
     }
 
     void computeQuality(int value){
         if (getQuality() + value > 50){
-            item.setQuality(50);
+            this.item.setQuality(50);
         } else if (getQuality() + value >= 0){
-            item.setQuality(value);
-        } else { item.setQuality(0);}
+            this.item.setQuality(getQuality() + value);
+        } else { 
+            this.item.setQuality(0);
+        }
 
     }
     
-    @Override
+   @Override
     public void updateQuality() {
 
-        if (this.quality > 0){
-            this.quality -= 1;
+        if (getSell_in() > 0) {
+            computeQuality(-1);
         } else {
-            this.quality -= 2;
+            computeQuality(-2);
         }
         setSell_in();
     }
 }
+    
