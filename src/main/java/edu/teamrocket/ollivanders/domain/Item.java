@@ -1,4 +1,4 @@
-package edu.teamrocket.ollivanders;
+package edu.teamrocket.ollivanders.domain;
 
 public class Item {
 
