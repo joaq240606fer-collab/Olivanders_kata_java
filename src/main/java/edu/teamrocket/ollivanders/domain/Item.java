@@ -20,6 +20,11 @@ public class Item {
         return quality;
     }
 
+    void setQuality(int quality) {
+        this.quality = quality;
+    }
+
+
     public int getSell_in() {
         return sell_in;
     }
