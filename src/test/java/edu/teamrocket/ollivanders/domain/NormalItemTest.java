@@ -1,4 +1,4 @@
-package edu.teamrocket.ollivanders.domain.*;
+package edu.teamrocket.ollivanders.Domain;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
