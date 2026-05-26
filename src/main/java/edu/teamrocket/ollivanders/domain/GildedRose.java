@@ -3,7 +3,7 @@ package edu.teamrocket.ollivanders.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ollivanders {
+public class GildedRose {
 
     private final List<Updateable> items = new ArrayList<>();
 
@@ -15,6 +15,10 @@ public class Ollivanders {
         for (Updateable item : items) {
             item.updateQuality();
         }
+    }
+
+    public List<Updateable> inventory() {
+        return List.copyOf(this.items);
     }
 
     @Override
